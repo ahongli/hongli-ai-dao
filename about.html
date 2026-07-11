@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>关于我们 | 鸿利AI体系DAO</title>
+<style>
+:root{--cyan-50:#ecfeff;--cyan-100:#cffafe;--cyan-200:#a5f3fc;--cyan-300:#67e8f9;--cyan-400:#22d3ee;--cyan-500:#06b6d4;--cyan-600:#0891b2;--cyan-700:#0e7490;--cyan-800:#155e75;--cyan-900:#164e63;--cyan-950:#083344;--teal-500:#14b8a6;--teal-600:#0d9488;--gray-50:#f9fafb;--gray-100:#f3f4f6;--gray-200:#e5e7eb;--gray-300:#d1d5db;--gray-400:#9ca3af;--gray-500:#6b7280;--gray-600:#4b5563;--gray-700:#374151;--gray-800:#1f2937;--gray-900:#111827;--gray-950:#030712;--gradient-hero:linear-gradient(135deg,#022c34 0%,#0e7490 40%,#0d9488 70%,#083344 100%);--gradient-cta:linear-gradient(135deg,var(--cyan-500) 0%,var(--teal-500) 100%);--accent:var(--cyan-500);--accent-hover:var(--cyan-600);--accent-deep:var(--cyan-700);--accent-soft:var(--cyan-50);--font-sans:"SF Pro Display","SF Pro Text","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Helvetica,Arial,sans-serif;--max-width:1200px;--radius-lg:20px;--radius-xl:28px;--shadow-md:0 4px 12px rgba(0,0,0,0.06);--shadow-lg:0 12px 40px rgba(0,0,0,0.08);--shadow-glow:0 0 60px rgba(6,182,212,0.15);--shadow-cyan:0 4px 20px rgba(6,182,212,0.25);--ease-out-expo:cubic-bezier(0.16,1,0.3,1);--duration-fast:200ms;--duration-base:400ms}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:var(--font-sans);font-size:16px;line-height:1.6;color:var(--gray-900);background:#fff;overflow-x:hidden}
+a{text-decoration:none;color:inherit}ul{list-style:none}img{max-width:100%;height:auto;display:block}
+::selection{background:rgba(6,182,212,0.25);color:var(--cyan-900)}
+.container{max-width:var(--max-width);margin:0 auto;padding:0 24px}
+.container-narrow{max-width:860px;margin:0 auto;padding:0 24px}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:14px 0;transition:all var(--duration-base) var(--ease-out-expo);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);background:rgba(255,255,255,0.72);border-bottom:1px solid transparent}
+.nav.scrolled{padding:8px 0;background:rgba(255,255,255,0.9);border-bottom:1px solid rgba(0,0,0,0.06);box-shadow:0 1px 2px rgba(0,0,0,0.04)}
+.nav-inner{max-width:var(--max-width);margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.1rem;color:var(--gray-900);letter-spacing:-0.02em}
+.nav-logo img{height:36px;width:auto;border-radius:6px}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a{font-size:0.85rem;font-weight:500;color:var(--gray-700);letter-spacing:-0.01em;position:relative;padding:4px 0;transition:color var(--duration-fast)}
+.nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:var(--accent);border-radius:2px;transition:width var(--duration-base) var(--ease-out-expo)}
+.nav-links a:hover,.nav-links a.active{color:var(--accent)}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-dropdown{position:relative}
+.nav-dropdown>a{display:flex;align-items:center;gap:4px;cursor:default}
+.nav-dropdown>a svg{width:12px;height:12px;transition:transform var(--duration-fast)}
+.nav-dropdown:hover>a svg{transform:rotate(180deg)}
+.nav-dropdown-menu{position:absolute;top:100%;left:-16px;margin-top:12px;background:#fff;border:1px solid var(--gray-100);border-radius:12px;box-shadow:var(--shadow-lg);padding:8px 0;min-width:210px;opacity:0;visibility:hidden;transform:translateY(8px);transition:all var(--duration-base) var(--ease-out-expo)}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}
+.nav-dropdown-menu a{display:block;padding:8px 20px;font-size:0.82rem;white-space:nowrap}
+.nav-dropdown-menu a:hover{background:var(--accent-soft);color:var(--accent-deep)}
+.nav-cta{display:inline-flex;align-items:center;gap:6px;padding:8px 18px;background:var(--gradient-cta);color:#fff;border:none;border-radius:20px;font-family:var(--font-sans);font-size:0.82rem;font-weight:600;cursor:pointer;text-decoration:none;transition:all var(--duration-base) var(--ease-out-expo);box-shadow:0 2px 8px rgba(6,182,212,0.25);white-space:nowrap}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(6,182,212,0.35);color:#fff}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;z-index:1001;background:none;border:none}
+.hamburger span{display:block;width:22px;height:2px;background:var(--gray-900);border-radius:2px;transition:all var(--duration-base) var(--ease-out-expo);transform-origin:center}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.mobile-menu{display:none;position:fixed;inset:0;z-index:999;background:rgba(255,255,255,0.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);flex-direction:column;align-items:center;justify-content:flex-start;padding-top:100px;gap:18px;overflow-y:auto}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:1.15rem;font-weight:600;color:var(--gray-900);letter-spacing:-0.02em}
+.mobile-menu a:hover{color:var(--accent)}
+.mobile-menu .nav-cta{margin-top:12px;font-size:0.95rem;padding:12px 28px}
+.page-header{background:var(--gradient-hero);padding:140px 24px 80px;text-align:center;position:relative;overflow:hidden}
+.page-header::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 80% at 50% 0%,black 30%,transparent 70%)}
+.page-header>*{position:relative;z-index:1}
+.page-header .badge{display:inline-block;padding:6px 16px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);border-radius:16px;color:var(--cyan-200);font-size:0.78rem;font-weight:600;letter-spacing:0.04em;margin-bottom:20px;backdrop-filter:blur(10px)}
+.page-header h1{font-size:clamp(2.2rem,5vw,3.5rem);font-weight:700;letter-spacing:-0.03em;color:#fff;margin-bottom:16px;line-height:1.15}
+.page-header p{font-size:1.1rem;color:rgba(255,255,255,0.7);max-width:640px;margin:0 auto;line-height:1.7}
+.page-body{padding:80px 24px}
+.page-body h2{font-size:clamp(1.5rem,3vw,2rem);font-weight:700;letter-spacing:-0.025em;color:var(--gray-900);margin:48px 0 16px;line-height:1.25}
+.page-body h2:first-child{margin-top:0}
+.page-body h3{font-size:1.2rem;font-weight:600;color:var(--cyan-700);margin:28px 0 10px}
+.page-body p{font-size:0.98rem;color:var(--gray-600);line-height:1.75;margin-bottom:16px}
+.page-body ul,.page-body ol{margin:12px 0 24px 20px;color:var(--gray-600)}
+.page-body li{font-size:0.95rem;line-height:1.7;margin-bottom:8px}
+.page-body .highlight-box{background:var(--cyan-50);border-left:4px solid var(--accent);padding:24px 28px;border-radius:0 var(--radius-lg) var(--radius-lg) 0;margin:28px 0}
+.page-body .highlight-box p{color:var(--cyan-800);margin:0}
+.page-body .card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin:28px 0}
+.page-body .info-card{background:#fff;border:1px solid var(--gray-100);border-radius:var(--radius-lg);padding:32px 28px;transition:all var(--duration-base) var(--ease-out-expo)}
+.page-body .info-card:hover{transform:translateY(-2px);border-color:var(--cyan-200);box-shadow:var(--shadow-md),var(--shadow-glow)}
+.page-body .info-card .icon{font-size:2rem;margin-bottom:12px}
+.page-body .info-card h4{font-size:1.05rem;font-weight:600;color:var(--gray-900);margin-bottom:8px}
+.page-body .info-card p{font-size:0.88rem;color:var(--gray-500)}
+.page-body blockquote{background:var(--gray-50);border-left:3px solid var(--cyan-300);padding:20px 24px;margin:24px 0;border-radius:0 12px 12px 0;font-style:italic;color:var(--gray-600)}
+.page-body .divider{height:1px;background:var(--gray-200);margin:40px 0}
+.section-cta{background:var(--gradient-hero);border-radius:var(--radius-xl);padding:64px 48px;text-align:center;margin-top:48px;position:relative;overflow:hidden}
+.section-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 50% 0%,rgba(6,182,212,0.25) 0%,transparent 70%)}
+.section-cta>*{position:relative;z-index:1}
+.section-cta h2{font-size:clamp(1.5rem,3vw,2rem);font-weight:700;color:#fff;margin:0 0 12px}
+.section-cta p{color:rgba(255,255,255,0.7);margin-bottom:28px}
+.section-cta .btn-primary{display:inline-flex;align-items:center;gap:8px;padding:16px 36px;background:var(--gradient-cta);color:#fff;font-size:1rem;font-weight:600;border-radius:28px;transition:all var(--duration-fast);box-shadow:0 2px 8px rgba(6,182,212,0.25)}
+.section-cta .btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(6,182,212,0.35);color:#fff}
+.footer{background:var(--gray-950);color:var(--gray-400);padding:60px 24px 32px}
+.footer-grid{max-width:var(--max-width);margin:0 auto 40px;display:grid;grid-template-columns:2fr 1fr 1fr 1.2fr;gap:40px}
+.footer-brand p{margin-top:12px;font-size:0.88rem;line-height:1.6;color:var(--gray-500)}
+.footer-col h4{font-size:0.85rem;font-weight:600;color:#fff;letter-spacing:0.02em;margin-bottom:18px}
+.footer-col a{display:block;font-size:0.85rem;color:var(--gray-500);margin-bottom:10px;transition:color var(--duration-fast)}
+.footer-col a:hover{color:var(--cyan-400)}
+.footer-phone{color:var(--cyan-400);font-weight:600;font-size:1rem}
+.footer-bottom{max-width:var(--max-width);margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);text-align:center;font-size:0.8rem;color:var(--gray-600)}
+.breadcrumb{max-width:var(--max-width);margin:0 auto 48px;font-size:0.85rem;color:var(--gray-400)}
+.breadcrumb a{color:var(--accent);transition:color var(--duration-fast)}
+.breadcrumb a:hover{color:var(--accent-hover)}
+.compare-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:0.9rem;border-radius:12px;overflow:hidden;box-shadow:var(--shadow-md)}
+.compare-table th{background:var(--cyan-700);color:#fff;padding:14px 16px;text-align:left;font-weight:600}
+.compare-table td{padding:12px 16px;border-bottom:1px solid var(--gray-100)}
+.compare-table tr:nth-child(even){background:var(--gray-50)}
+.compare-table tr:hover{background:var(--cyan-50)}
+.contact-big{background:var(--gradient-hero);border-radius:var(--radius-xl);padding:40px 36px;text-align:center;margin:32px 0 48px;position:relative;overflow:hidden}
+.contact-big::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 50% 0%,rgba(6,182,212,0.25) 0%,transparent 70%)}
+.contact-big>*{position:relative;z-index:1}
+.contact-big h3{color:#fff;font-size:1.3rem;margin-bottom:8px;font-weight:700}
+.contact-big p{color:rgba(255,255,255,0.7);margin-bottom:20px;font-size:0.95rem}
+.contact-big .phone-display{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;color:#fff;letter-spacing:0.02em;display:flex;align-items:center;justify-content:center;gap:12px}
+.contact-big .phone-display svg{width:32px;height:32px;color:var(--cyan-400)}
+.contact-big .phone-label{color:var(--cyan-300);font-size:0.85rem;margin-top:8px}
+@media(max-width:768px){
+.nav-links{display:none}.nav-cta.desktop{display:none}.hamburger{display:flex}
+.page-header{padding:120px 20px 56px}
+.page-body{padding:48px 20px}.footer-grid{grid-template-columns:1fr;gap:28px}
+.section-cta{padding:48px 28px}.compare-table{font-size:0.78rem}
+.compare-table th,.compare-table td{padding:10px 12px}
+.contact-big .phone-display{font-size:clamp(1.4rem,5vw,2rem)}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important}}
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="nav" id="navbar">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="8" fill="url(#lg)"/><path d="M10 26V12l6 8 6-8v14" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="lg" x1="0" y1="0" x2="36" y2="36"><stop stop-color="#06b6d4"/><stop offset="1" stop-color="#14b8a6"/></linearGradient></defs></svg>
+      <span>鸿利AI体系DAO</span>
+    </a>
+    <div class="nav-links">
+      <a href="/">首页</a>
+      <div class="nav-dropdown">
+        <a>子页面 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></a>
+        <div class="nav-dropdown-menu">
+          <a href="web3-era.html">Web3.0时代解析</a>
+          <a href="dao-org.html">DAO自治组织</a>
+          <a href="defi.html">DeFi去中心化金融</a>
+          <a href="smart-contract.html">智能合约商业体系</a>
+          <a href="distributed-storage.html">分布式存储与数据确权</a>
+          <a href="business-loop.html">商业闭环解决方案</a>
+          <a href="future-trends.html">未来商业趋势</a>
+          <a href="about.html">关于我们</a>
+        </div>
+      </div>
+      <a href="about.html">服务咨询</a>
+      <a href="tel:19225617326" class="nav-cta desktop"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 19225617326</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/">首页</a>
+  <a href="web3-era.html">Web3.0时代解析</a>
+  <a href="dao-org.html">DAO自治组织</a>
+  <a href="defi.html">DeFi去中心化金融</a>
+  <a href="smart-contract.html">智能合约商业体系</a>
+  <a href="distributed-storage.html">分布式存储与数据确权</a>
+  <a href="business-loop.html">商业闭环解决方案</a>
+  <a href="future-trends.html">未来商业趋势</a>
+  <a href="about.html">关于我们</a>
+  <a href="tel:19225617326" class="nav-cta"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 19225617326</a>
+</div>
+
+<!-- Page Header -->
+<header class="page-header">
+  <span class="badge">About & Services</span>
+  <h1>关于我们 / 服务咨询</h1>
+  <p>鸿利AI体系DAO——专注Web3.0商业落地，为企业和创业者提供从零到一的去中心化商业体系搭建服务。</p>
+</header>
+
+<!-- Page Body -->
+<section class="page-body">
+  <div class="container-narrow">
+
+    <nav class="breadcrumb">
+      <a href="/">首页</a> / <span>关于我们</span>
+    </nav>
+
+    <h2>关于鸿利AI体系DAO</h2>
+    <p>鸿利AI体系DAO是一家专注于Web3.0商业落地的技术服务与咨询机构。我们坚信：区块链和智能合约不是用来炒作的金融工具，而是改造实体商业、重塑利益分配、实现共同富裕的基础设施。</p>
+    <p>我们的使命是帮助传统企业和创业者理解并拥抱Web3.0，通过DAO治理架构、智能合约自动化、代币经济设计和去中心化商业闭环，构建真正属于所有参与者的共赢生态。我们不发行代币、不运营交易所、不做金融投机——我们只做一件事：用Web3.0技术为实体商业赋能。</p>
+    <p>团队核心成员具备区块链底层开发、智能合约安全审计、代币经济设计、DAO治理架构等领域的深厚技术背景，同时深入理解餐饮、零售、供应链、内容创作等实体产业的商业逻辑。我们既不是空谈理论的"布道者"，也不是只懂代码的"技术极客"——我们是连接Web3.0技术与实体商业的桥梁。</p>
+
+    <h2>四大核心服务</h2>
+
+    <div class="card-grid">
+      <div class="info-card">
+        <div class="icon">🏛️</div>
+        <h4>DAO定制搭建</h4>
+        <p>从组织架构设计、代币经济模型到智能合约开发、治理机制搭建——提供完整的DAO创建服务。包括：治理代币发行、多签钱包部署、投票合约开发、国库管理系统、贡献激励机制设计。适用于：社区型项目、创作者经济、行业协会、投资DAO等。</p>
+      </div>
+      <div class="info-card">
+        <div class="icon">🏪</div>
+        <h4>实体Web3改造</h4>
+        <p>为传统实体企业提供Web3.0升级方案：会员积分通证化改造、供应链上链存证、智能合约自动分账系统、DAO治理引入、消费者代币激励体系。通过Web3.0技术重构企业与用户、合作伙伴之间的关系，实现从"中心化运营"到"社区共治"的平滑过渡。</p>
+      </div>
+      <div class="info-card">
+        <div class="icon">🔄</div>
+        <h4>商业闭环搭建</h4>
+        <p>设计并实施完整的Web3.0商业闭环系统——包含创作者闭环（内容NFT+自动版税）、商家闭环（交易自动化+积分通证）、消费者闭环（消费返利+推荐激励）、合伙人闭环（贡献量化+自动分红）。覆盖从经济模型设计到技术实现的全部环节。</p>
+      </div>
+      <div class="info-card">
+        <div class="icon">🚀</div>
+        <h4>项目孵化</h4>
+        <p>为优秀的Web3.0创业项目提供从概念验证到市场启动的全程孵化服务。包括：商业计划书撰写、代币经济模型设计、技术原型开发、社区冷启动策略、资源对接、合规咨询。我们寻找真正有实体产业价值的项目——不投机、不泡沫、不割韭菜。</p>
+      </div>
+    </div>
+
+    <h2>我们的服务流程</h2>
+    <ol>
+      <li><strong>需求沟通</strong>：深入了解您的业务现状、痛点和Web3.0转型目标，评估可行性。</li>
+      <li><strong>方案设计</strong>：根据需求定制完整的Web3.0实施方案，包括技术架构、经济模型、时间表和预算。</li>
+      <li><strong>技术开发</strong>：智能合约编写与测试、前端DApp开发、安全审计、测试网部署验证。</li>
+      <li><strong>部署上线</strong>：主网合约部署、多签钱包设置、DAO治理参数初始化、生态冷启动。</li>
+      <li><strong>运营支持</strong>：持续的社区治理咨询、技术运维、合约升级支持。</li>
+    </ol>
+
+    <h2>适合我们的客户</h2>
+    <ul>
+      <li>传统企业主——希望引入Web3.0技术提升运营效率、重构用户关系</li>
+      <li>创业团队——计划在Web3.0赛道建立项目但缺乏技术或设计能力</li>
+      <li>内容创作者——希望获得数字作品的真正所有权和公平收益</li>
+      <li>行业协会/社群——希望通过DAO实现会员自治和社区经济</li>
+      <li>地方政府/产业园区——希望通过Web3.0赋能本地特色产业</li>
+    </ul>
+
+    <div class="divider"></div>
+
+    <!-- Contact Section -->
+    <h2>联系我们</h2>
+    <p>无论您是想咨询Web3.0转型方案、寻求技术合作还是洽谈项目孵化——欢迎随时联系我们。我们提供免费的初步咨询，帮助您了解Web3.0对您业务的潜在价值。</p>
+
+    <div class="contact-big">
+      <h3>服务咨询专线</h3>
+      <p>工作日 9:00 - 21:00，专业顾问为您解答</p>
+      <a href="tel:19225617326" class="phone-display">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        19225617326
+      </a>
+      <div class="phone-label">点击号码即可直接拨打电话</div>
+    </div>
+
+    <h3>其他联系方式</h3>
+    <ul>
+      <li><strong>服务咨询专线：</strong><a href="tel:19225617326" style="color:var(--accent)">19225617326</a>（推荐直接拨打）</li>
+      <li><strong>工作时间：</strong>周一至周日 9:00-21:00</li>
+      <li><strong>服务范围：</strong>全国（线上服务为主，支持远程协作）</li>
+    </ul>
+
+    <div class="highlight-box">
+      <p>首次咨询免费！我们会在30分钟内了解您的项目需求，评估Web3.0转型的可行性，并给出初步建议。无论最终是否合作，您都将获得一份有价值的行业洞察和路线参考。</p>
+    </div>
+
+    <!-- CTA -->
+    <div class="section-cta">
+      <h2>立即开启您的Web3.0之旅</h2>
+      <p>无论您身处哪个行业，Web3.0都正在重塑商业规则。立即致电，让我们帮您找到最佳切入点。</p>
+      <a href="tel:19225617326" class="btn-primary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 拨打 19225617326 咨询</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="/" class="nav-logo" style="color:#fff">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="8" fill="url(#lg2)"/><path d="M10 26V12l6 8 6-8v14" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="lg2" x1="0" y1="0" x2="36" y2="36"><stop stop-color="#06b6d4"/><stop offset="1" stop-color="#14b8a6"/></linearGradient></defs></svg>
+        <span>鸿利AI体系DAO</span>
+      </a>
+      <p>专注Web3.0商业落地，为企业提供DAO架构设计、智能合约开发及去中心化商业闭环搭建服务。让每个参与者成为价值的创造者和共享者。</p>
+    </div>
+    <div class="footer-col">
+      <h4>核心服务</h4>
+      <a href="dao-org.html">DAO定制搭建</a>
+      <a href="smart-contract.html">智能合约开发</a>
+      <a href="business-loop.html">商业闭环设计</a>
+      <a href="about.html">项目孵化</a>
+    </div>
+    <div class="footer-col">
+      <h4>知识体系</h4>
+      <a href="web3-era.html">Web3.0时代解析</a>
+      <a href="defi.html">DeFi去中心化金融</a>
+      <a href="distributed-storage.html">分布式存储</a>
+      <a href="future-trends.html">未来趋势洞察</a>
+    </div>
+    <div class="footer-col">
+      <h4>联系我们</h4>
+      <a href="tel:19225617326" class="footer-phone"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>19225617326</a>
+      <a href="about.html">服务咨询</a>
+      <a href="about.html">合作洽谈</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 鸿利AI体系DAO. All rights reserved.
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>20)});
+const hamburger=document.getElementById('hamburger');
+const mobileMenu=document.getElementById('mobileMenu');
+hamburger.addEventListener('click',()=>{hamburger.classList.toggle('open');mobileMenu.classList.toggle('open')});
+mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{hamburger.classList.remove('open');mobileMenu.classList.remove('open')}));
+</script>
+</body>
+</html>
