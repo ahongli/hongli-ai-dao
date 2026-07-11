@@ -84,16 +84,18 @@ a{text-decoration:none;color:inherit}ul{list-style:none}img{max-width:100%;heigh
 .breadcrumb{max-width:var(--max-width);margin:0 auto 48px;font-size:0.85rem;color:var(--gray-400)}
 .breadcrumb a{color:var(--accent);transition:color var(--duration-fast)}
 .breadcrumb a:hover{color:var(--accent-hover)}
-.compare-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:0.9rem;border-radius:12px;overflow:hidden;box-shadow:var(--shadow-md)}
+.table-wrap{overflow-x:auto;margin:24px 0;border-radius:12px;box-shadow:var(--shadow-md)}
+.compare-table{width:100%;border-collapse:collapse;font-size:0.9rem}
 .compare-table th{background:var(--cyan-700);color:#fff;padding:14px 16px;text-align:left;font-weight:600}
 .compare-table td{padding:12px 16px;border-bottom:1px solid var(--gray-100)}
 .compare-table tr:nth-child(even){background:var(--gray-50)}
 .compare-table tr:hover{background:var(--cyan-50)}
-@media(max-width:768px){
+@media(max-width:1024px){.page-header{padding:120px 24px 64px}}
+(max-width:768px){
 .nav-links{display:none}.nav-cta.desktop{display:none}.hamburger{display:flex}
 .page-header{padding:120px 20px 56px}
 .page-body{padding:48px 20px}.footer-grid{grid-template-columns:1fr;gap:28px}
-.section-cta{padding:48px 28px}.compare-table{font-size:0.78rem}
+.section-cta{padding:48px 28px}.table-wrap,.compare-table{font-size:0.78rem}
 .compare-table th,.compare-table td{padding:10px 12px}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important}}
@@ -104,12 +106,12 @@ a{text-decoration:none;color:inherit}ul{list-style:none}img{max-width:100%;heigh
 <!-- Nav -->
 <nav class="nav" id="navbar">
   <div class="nav-inner">
-    <a href="/" class="nav-logo">
-      <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="8" fill="url(#lg)"/><path d="M10 26V12l6 8 6-8v14" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="lg" x1="0" y1="0" x2="36" y2="36"><stop stop-color="#06b6d4"/><stop offset="1" stop-color="#14b8a6"/></linearGradient></defs></svg>
-      <span>鸿利AI体系DAO</span>
-    </a>
+    <a href="index.html" class="nav-logo">
+  <img src="标志/WEB3.0时代与DAO商业闭环.png" alt="鸿利AI体系DAO">
+  鸿利AI · DAO
+</a>
     <div class="nav-links">
-      <a href="/">首页</a>
+      <a href="index.html">首页</a>
       <div class="nav-dropdown">
         <a>子页面 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></a>
         <div class="nav-dropdown-menu">
@@ -132,7 +134,7 @@ a{text-decoration:none;color:inherit}ul{list-style:none}img{max-width:100%;heigh
   </div>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="/">首页</a>
+  <a href="index.html">首页</a>
   <a href="web3-era.html">Web3.0时代解析</a>
   <a href="dao-org.html">DAO自治组织</a>
   <a href="defi.html">DeFi去中心化金融</a>
@@ -156,7 +158,7 @@ a{text-decoration:none;color:inherit}ul{list-style:none}img{max-width:100%;heigh
   <div class="container-narrow">
 
     <nav class="breadcrumb">
-      <a href="/">首页</a> / <span>商业闭环解决方案</span>
+      <a href="index.html">首页</a> / <span>商业闭环解决方案</span>
     </nav>
 
     <h2>Web3.0商业闭环概述</h2>
@@ -224,7 +226,8 @@ a{text-decoration:none;color:inherit}ul{list-style:none}img{max-width:100%;heigh
     <h2>五、完整的自循环体系</h2>
     <p>以上四个闭环并非独立运行，而是通过同一套智能合约基础设施连接为一个完整的自循环生态系统：</p>
 
-    <table class="compare-table">
+    <div class="table-wrap">
+<table class="compare-table">
       <thead>
         <tr>
           <th>闭环角色</th>
@@ -260,6 +263,7 @@ a{text-decoration:none;color:inherit}ul{list-style:none}img{max-width:100%;heigh
         </tr>
       </tbody>
     </table>
+</div>
 
     <p>这个自循环体系的精妙之处在于：每一方的"输出"都是另一方的"输入"。创作者的优质内容吸引消费者，消费者的代币在商家生态中流通，商家的增长代币价值使合伙人受益，合伙人的资源投入又推动整个生态扩展。所有互动由智能合约自动完成，形成正向飞轮效应。</p>
     <p>鸿利AI体系DAO提供的正是这套商业闭环的完整搭建服务——从代币经济设计、智能合约开发、DAO治理框架搭建，到生态冷启动和社区运营策略——帮助每一个有意愿的实体企业和创业项目构建自己的Web3.0商业闭环。</p>
@@ -280,10 +284,10 @@ a{text-decoration:none;color:inherit}ul{list-style:none}img{max-width:100%;heigh
 <footer class="footer">
   <div class="footer-grid">
     <div class="footer-brand">
-      <a href="/" class="nav-logo" style="color:#fff">
-        <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="8" fill="url(#lg2)"/><path d="M10 26V12l6 8 6-8v14" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="lg2" x1="0" y1="0" x2="36" y2="36"><stop stop-color="#06b6d4"/><stop offset="1" stop-color="#14b8a6"/></linearGradient></defs></svg>
-        <span>鸿利AI体系DAO</span>
-      </a>
+      <a href="index.html" class="nav-logo" style="color:#fff;">
+  <img src="标志/WEB3.0时代与DAO商业闭环.png" alt="鸿利AI体系DAO" style="height:32px;">
+  鸿利AI · DAO
+</a>
       <p>专注Web3.0商业落地，为企业提供DAO架构设计、智能合约开发及去中心化商业闭环搭建服务。让每个参与者成为价值的创造者和共享者。</p>
     </div>
     <div class="footer-col">
